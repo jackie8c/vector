@@ -119,7 +119,7 @@ pub struct TcpSendAckError {
 
 impl InternalEvent for TcpSendAckError {
     fn emit(self) {
-        error!(
+        debug!(
             message = "Error writing acknowledgement, dropping connection.",
             error = %self.error,
             error_code = "ack_failed",
